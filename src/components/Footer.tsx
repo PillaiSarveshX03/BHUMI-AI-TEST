@@ -1,0 +1,1 @@
+export function Footer(){return <footer className="mt-10 bg-[#1B1B1B] px-4 py-8 text-center text-sm text-white">Project Bhumi is designed for future FastAPI, PostgreSQL, weather API, satellite, sensor, and AI chatbot integrations.</footer>}
