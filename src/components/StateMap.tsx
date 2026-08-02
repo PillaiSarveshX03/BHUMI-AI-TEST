@@ -1,0 +1,5 @@
+import { motion } from 'framer-motion';
+import districts from '../data/districts.json';
+import soilColors from '../data/soil.json';
+export type District = (typeof districts)[number];
+export function StateMap({stateId,onHover,onSelect}:{stateId:string;onHover:(d:District|null)=>void;onSelect:(d:District)=>void}){const visible=districts.filter(d=>d.stateId===stateId); if(!visible.length)return <p className="p-8 text-center text-zinc-600">District map data is being prepared for this state.</p>; return <motion.svg initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} viewBox="0 0 420 220" className="w-full" role="img" aria-label="District-level political map">{visible.map(d=><motion.path key={d.id} tabIndex={0} d={d.path} transform="translate(-10 -320) scale(1.25)" fill={soilColors[d.soil as keyof typeof soilColors]} stroke="#fff" strokeWidth={3} className="map-state" onMouseEnter={()=>onHover(d)} onMouseLeave={()=>onHover(null)} onFocus={()=>onHover(d)} onBlur={()=>onHover(null)} onClick={()=>onSelect(d)} onKeyDown={(e)=>{if(e.key==='Enter'||e.key===' ')onSelect(d)}}><title>{`${d.name}: ${d.soil}, ${d.rainfall}, ${d.climate}`}</title></motion.path>)}</motion.svg>}
