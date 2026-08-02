@@ -1,1 +1,41 @@
-{"Tropical wet and dry":"Seasonal monsoon with dry winters","Semi-arid":"Low rainfall and high evapotranspiration","Hot desert":"Very dry with large temperature swings","Humid subtropical":"Hot summers, cool winters, monsoon rains"}
+[
+  { "districtId": "pb-amritsar", "climateZone": "Semi-arid subtropical" },
+  { "districtId": "pb-ludhiana", "climateZone": "Semi-arid subtropical" },
+  { "districtId": "pb-bathinda", "climateZone": "Arid subtropical" },
+
+  { "districtId": "rj-jaisalmer", "climateZone": "Hot desert" },
+  { "districtId": "rj-jaipur", "climateZone": "Semi-arid" },
+  { "districtId": "rj-kota", "climateZone": "Semi-arid subtropical" },
+
+  { "districtId": "up-varanasi", "climateZone": "Humid subtropical" },
+  { "districtId": "up-agra", "climateZone": "Semi-arid subtropical" },
+  { "districtId": "up-jhansi", "climateZone": "Subtropical" },
+
+  { "districtId": "gj-ahmedabad", "climateZone": "Semi-arid" },
+  { "districtId": "gj-rajkot", "climateZone": "Semi-arid" },
+  { "districtId": "gj-surat", "climateZone": "Tropical wet and dry" },
+
+  { "districtId": "mp-indore", "climateZone": "Subtropical highland" },
+  { "districtId": "mp-bhopal", "climateZone": "Humid subtropical" },
+  { "districtId": "mp-jabalpur", "climateZone": "Humid subtropical" },
+
+  { "districtId": "wb-kolkata", "climateZone": "Tropical wet and dry" },
+  { "districtId": "wb-murshidabad", "climateZone": "Humid subtropical" },
+  { "districtId": "wb-darjeeling", "climateZone": "Subtropical highland" },
+
+  { "districtId": "mh-nagpur", "climateZone": "Tropical wet and dry" },
+  { "districtId": "mh-pune", "climateZone": "Semi-arid" },
+  { "districtId": "mh-ratnagiri", "climateZone": "Tropical monsoon" },
+
+  { "districtId": "ka-bengaluru-rural", "climateZone": "Tropical savanna" },
+  { "districtId": "ka-belagavi", "climateZone": "Semi-arid" },
+  { "districtId": "ka-mangaluru", "climateZone": "Tropical monsoon" },
+
+  { "districtId": "kl-kozhikode", "climateZone": "Tropical monsoon" },
+  { "districtId": "kl-idukki", "climateZone": "Tropical highland" },
+  { "districtId": "kl-alappuzha", "climateZone": "Tropical wet" },
+
+  { "districtId": "tn-coimbatore", "climateZone": "Semi-arid tropical" },
+  { "districtId": "tn-thanjavur", "climateZone": "Tropical wet and dry" },
+  { "districtId": "tn-madurai", "climateZone": "Semi-arid tropical" }
+]

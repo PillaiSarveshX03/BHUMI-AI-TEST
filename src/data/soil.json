@@ -1,1 +1,44 @@
-{"Black":"#3A302C","Red":"#B95036","Laterite":"#C7773A","Sandy":"#D8BD74","Alluvial":"#8FBF73","Mountain":"#8A978B"}
+[
+  {
+    "type": "Black",
+    "color": "#3E3A36",
+    "gradientFrom": "#5C554E",
+    "gradientTo": "#241F1C",
+    "description": "Regur / black cotton soil. High clay content, self-mulching, retains moisture deep into the dry season."
+  },
+  {
+    "type": "Red",
+    "color": "#B0463C",
+    "gradientFrom": "#C97365",
+    "gradientTo": "#7E2E26",
+    "description": "Iron-oxide rich soil formed on crystalline rock. Porous, moderately fertile, responds well to fertilizer."
+  },
+  {
+    "type": "Laterite",
+    "color": "#A9532E",
+    "gradientFrom": "#C67C4E",
+    "gradientTo": "#7A3B1E",
+    "description": "Formed under heavy monsoon leaching. Acidic and low in nitrogen, but excellent for tree and spice crops."
+  },
+  {
+    "type": "Sandy",
+    "color": "#D9B36A",
+    "gradientFrom": "#EAD199",
+    "gradientTo": "#B8893F",
+    "description": "Coarse-grained, low water-holding capacity, typical of arid and semi-arid tracts."
+  },
+  {
+    "type": "Alluvial",
+    "color": "#8C6A46",
+    "gradientFrom": "#AD8A63",
+    "gradientTo": "#634B2F",
+    "description": "River-deposited soil, replenished annually, the most fertile and widely cultivated soil in India."
+  },
+  {
+    "type": "Mountain",
+    "color": "#6E7F72",
+    "gradientFrom": "#93A697",
+    "gradientTo": "#4A5A4E",
+    "description": "Shallow, humus-rich soils on slopes, texture and depth varying sharply with elevation."
+  }
+]

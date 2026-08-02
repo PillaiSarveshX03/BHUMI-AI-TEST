@@ -1,3 +1,69 @@
-@import "tailwindcss";
-:root{font-family:Inter,ui-sans-serif,system-ui;color:#1B1B1B;background:#fff}body{margin:0}.soil-gradient{background:linear-gradient(135deg,#26221e,#b95137,#c9894c,#d7bd70,#74a057,#89958b)}.map-state{transition:all .25s ease;cursor:pointer}.map-state:focus{outline:3px solid #81C784;outline-offset:4px}.map-state:hover{filter:drop-shadow(0 10px 16px rgb(46 125 50/.25));transform:translateY(-2px)}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+:root {
+  --color-primary: #2e7d32;
+  --color-secondary: #388e3c;
+  --color-accent: #81c784;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f9f4;
+  --color-text: #1b1b1b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Visible keyboard focus ring everywhere — accessibility floor */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scientific "readout" scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Sensor-grid background used behind the map console */
+.sensor-field {
+  background-color: var(--color-bg-alt);
+  background-image: linear-gradient(rgba(46, 125, 50, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 125, 50, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Monospace data readout style, used for coordinates / measurements */
+.data-readout {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
