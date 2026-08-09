@@ -1,1 +1,212 @@
-[{"id":"punjab","name":"Punjab","soil":"Alluvial","description":"Deep, fertile Indo-Gangetic plains supporting wheat, rice, and vegetables.","path":"M70 60 L160 45 L205 95 L170 155 L85 145 Z"},{"id":"rajasthan","name":"Rajasthan","soil":"Sandy","description":"Arid desert and semi-arid sandy soils with low organic matter.","path":"M40 155 L175 150 L220 245 L165 345 L55 310 L20 225 Z"},{"id":"gujarat","name":"Gujarat","soil":"Black","description":"Clay-rich regur soils in central tracts and coastal alluvium near the Arabian Sea.","path":"M60 325 L170 350 L205 430 L130 505 L35 455 L10 375 Z"},{"id":"maharashtra","name":"Maharashtra","soil":"Black","description":"Basalt-derived black cotton soils with strong moisture retention.","path":"M190 355 L350 355 L395 455 L310 535 L160 505 L205 430 Z"},{"id":"karnataka","name":"Karnataka","soil":"Red","description":"Red loamy uplands with mixed black soil pockets in northern districts.","path":"M245 545 L355 495 L425 610 L385 735 L270 720 L220 630 Z"},{"id":"tamil-nadu","name":"Tamil Nadu","soil":"Red","description":"Red, lateritic, and coastal alluvial soils under tropical dry to wet climates.","path":"M390 720 L480 675 L535 775 L490 890 L405 835 Z"},{"id":"west-bengal","name":"West Bengal","soil":"Alluvial","description":"Deltaic alluvial soils grading toward lateritic western uplands.","path":"M570 310 L650 335 L630 470 L555 440 L535 360 Z"},{"id":"assam","name":"Assam","soil":"Alluvial","description":"Brahmaputra valley alluvium with humid subtropical conditions.","path":"M695 270 L875 255 L900 315 L720 340 Z"},{"id":"himachal","name":"Himachal Pradesh","soil":"Mountain","description":"Shallow mountain soils across Himalayan slopes and valleys.","path":"M210 35 L325 30 L345 105 L235 115 Z"},{"id":"odisha","name":"Odisha","soil":"Laterite","description":"Lateritic uplands and coastal alluvial belts suited to rice and pulses.","path":"M475 435 L595 465 L575 610 L455 600 L420 510 Z"}]
+[
+  {
+    "id": "jk",
+    "name": "Jammu & Kashmir",
+    "capital": "Srinagar",
+    "row": 0,
+    "col": 3,
+    "dominantSoil": "Mountain",
+    "soilDescription": "Thin, immature mountain soils on steep slopes, rich in organic litter but low in depth.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "pb",
+    "name": "Punjab",
+    "capital": "Chandigarh",
+    "row": 1,
+    "col": 2,
+    "dominantSoil": "Alluvial",
+    "soilDescription": "Deep, fertile alluvium laid down by the Sutlej and Beas — the backbone of India's wheat belt.",
+    "hasDistrictData": true
+  },
+  {
+    "id": "hp",
+    "name": "Himachal Pradesh",
+    "capital": "Shimla",
+    "row": 1,
+    "col": 3,
+    "dominantSoil": "Mountain",
+    "soilDescription": "Podzolic hill soils, acidic and humus-rich, suited to orchards and terraced cropping.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "uk",
+    "name": "Uttarakhand",
+    "capital": "Dehradun",
+    "row": 1,
+    "col": 4,
+    "dominantSoil": "Mountain",
+    "soilDescription": "Himalayan foothill soils, thin on the ridges and alluvial-rich in the Terai valleys.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "rj",
+    "name": "Rajasthan",
+    "capital": "Jaipur",
+    "row": 2,
+    "col": 1,
+    "dominantSoil": "Sandy",
+    "soilDescription": "Arid, low-humus desert soils with poor water retention, punctuated by fertile irrigated pockets.",
+    "hasDistrictData": true
+  },
+  {
+    "id": "up",
+    "name": "Uttar Pradesh",
+    "capital": "Lucknow",
+    "row": 2,
+    "col": 3,
+    "dominantSoil": "Alluvial",
+    "soilDescription": "Gangetic alluvium — among the most fertile soil in the world, renewed yearly by river silt.",
+    "hasDistrictData": true
+  },
+  {
+    "id": "br",
+    "name": "Bihar",
+    "capital": "Patna",
+    "row": 2,
+    "col": 5,
+    "dominantSoil": "Alluvial",
+    "soilDescription": "Flood-plain alluvium from the Ganga, rich in minerals but prone to seasonal waterlogging.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "as",
+    "name": "Assam",
+    "capital": "Dispur",
+    "row": 2,
+    "col": 6,
+    "dominantSoil": "Alluvial",
+    "soilDescription": "Brahmaputra alluvium, acidic and humus-rich, ideal for tea and paddy cultivation.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "gj",
+    "name": "Gujarat",
+    "capital": "Gandhinagar",
+    "row": 3,
+    "col": 1,
+    "dominantSoil": "Black",
+    "soilDescription": "Regur (black cotton) soil across Saurashtra, high in clay and moisture-retaining capacity.",
+    "hasDistrictData": true
+  },
+  {
+    "id": "mp",
+    "name": "Madhya Pradesh",
+    "capital": "Bhopal",
+    "row": 3,
+    "col": 3,
+    "dominantSoil": "Black",
+    "soilDescription": "Deccan trap-derived black soil across the Malwa plateau, excellent for cotton and soybean.",
+    "hasDistrictData": true
+  },
+  {
+    "id": "jh",
+    "name": "Jharkhand",
+    "capital": "Ranchi",
+    "row": 3,
+    "col": 5,
+    "dominantSoil": "Red",
+    "soilDescription": "Iron-rich red soil over the Chota Nagpur plateau, coarse-textured and moderately fertile.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "wb",
+    "name": "West Bengal",
+    "capital": "Kolkata",
+    "row": 3,
+    "col": 6,
+    "dominantSoil": "Alluvial",
+    "soilDescription": "Deltaic alluvium of the Ganga-Brahmaputra delta, among the most intensively cropped soils in India.",
+    "hasDistrictData": true
+  },
+  {
+    "id": "mh",
+    "name": "Maharashtra",
+    "capital": "Mumbai",
+    "row": 4,
+    "col": 2,
+    "dominantSoil": "Black",
+    "soilDescription": "Deccan black soil across the plateau interior, prized for cotton; laterite along the Konkan coast.",
+    "hasDistrictData": true
+  },
+  {
+    "id": "cg",
+    "name": "Chhattisgarh",
+    "capital": "Raipur",
+    "row": 4,
+    "col": 4,
+    "dominantSoil": "Red",
+    "soilDescription": "Red and yellow soils of the Chhattisgarh basin, rice being the dominant crop despite modest fertility.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "or",
+    "name": "Odisha",
+    "capital": "Bhubaneswar",
+    "row": 4,
+    "col": 5,
+    "dominantSoil": "Red",
+    "soilDescription": "Red lateritic uplands transitioning to fertile coastal alluvium near the Mahanadi delta.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "ga",
+    "name": "Goa",
+    "capital": "Panaji",
+    "row": 5,
+    "col": 1,
+    "dominantSoil": "Laterite",
+    "soilDescription": "Iron- and aluminium-rich laterite typical of the humid Western Ghats coastline.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "ka",
+    "name": "Karnataka",
+    "capital": "Bengaluru",
+    "row": 5,
+    "col": 2,
+    "dominantSoil": "Red",
+    "soilDescription": "Red sandy loam across the Deccan plateau, with black soil in the north and laterite on the coast.",
+    "hasDistrictData": true
+  },
+  {
+    "id": "tg",
+    "name": "Telangana",
+    "capital": "Hyderabad",
+    "row": 5,
+    "col": 3,
+    "dominantSoil": "Red",
+    "soilDescription": "Red chalka and black regur soils over granite terrain, suited to millets and cotton.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "ap",
+    "name": "Andhra Pradesh",
+    "capital": "Amaravati",
+    "row": 5,
+    "col": 4,
+    "dominantSoil": "Red",
+    "soilDescription": "Red soils inland giving way to fertile deltaic alluvium along the Krishna-Godavari coast.",
+    "hasDistrictData": false
+  },
+  {
+    "id": "kl",
+    "name": "Kerala",
+    "capital": "Thiruvananthapuram",
+    "row": 6,
+    "col": 2,
+    "dominantSoil": "Laterite",
+    "soilDescription": "Deep laterite soils under heavy monsoon rainfall, well suited to spices, coconut and rubber.",
+    "hasDistrictData": true
+  },
+  {
+    "id": "tn",
+    "name": "Tamil Nadu",
+    "capital": "Chennai",
+    "row": 6,
+    "col": 3,
+    "dominantSoil": "Red",
+    "soilDescription": "Red loamy soils over the interior plateau with fertile alluvium along the Cauvery delta.",
+    "hasDistrictData": true
+  }
+]

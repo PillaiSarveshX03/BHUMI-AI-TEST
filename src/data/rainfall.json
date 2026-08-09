@@ -1,1 +1,41 @@
-{"Pune":"722 mm","Nagpur":"1064 mm","Jaipur":"650 mm","Jaisalmer":"165 mm","Ludhiana":"733 mm","Amritsar":"681 mm"}
+[
+  { "districtId": "pb-amritsar", "annualRainfallMm": 680 },
+  { "districtId": "pb-ludhiana", "annualRainfallMm": 730 },
+  { "districtId": "pb-bathinda", "annualRainfallMm": 420 },
+
+  { "districtId": "rj-jaisalmer", "annualRainfallMm": 210 },
+  { "districtId": "rj-jaipur", "annualRainfallMm": 570 },
+  { "districtId": "rj-kota", "annualRainfallMm": 780 },
+
+  { "districtId": "up-varanasi", "annualRainfallMm": 1030 },
+  { "districtId": "up-agra", "annualRainfallMm": 690 },
+  { "districtId": "up-jhansi", "annualRainfallMm": 880 },
+
+  { "districtId": "gj-ahmedabad", "annualRainfallMm": 800 },
+  { "districtId": "gj-rajkot", "annualRainfallMm": 640 },
+  { "districtId": "gj-surat", "annualRainfallMm": 1220 },
+
+  { "districtId": "mp-indore", "annualRainfallMm": 980 },
+  { "districtId": "mp-bhopal", "annualRainfallMm": 1150 },
+  { "districtId": "mp-jabalpur", "annualRainfallMm": 1400 },
+
+  { "districtId": "wb-kolkata", "annualRainfallMm": 1600 },
+  { "districtId": "wb-murshidabad", "annualRainfallMm": 1450 },
+  { "districtId": "wb-darjeeling", "annualRainfallMm": 3100 },
+
+  { "districtId": "mh-nagpur", "annualRainfallMm": 1150 },
+  { "districtId": "mh-pune", "annualRainfallMm": 720 },
+  { "districtId": "mh-ratnagiri", "annualRainfallMm": 3200 },
+
+  { "districtId": "ka-bengaluru-rural", "annualRainfallMm": 900 },
+  { "districtId": "ka-belagavi", "annualRainfallMm": 780 },
+  { "districtId": "ka-mangaluru", "annualRainfallMm": 3600 },
+
+  { "districtId": "kl-kozhikode", "annualRainfallMm": 3000 },
+  { "districtId": "kl-idukki", "annualRainfallMm": 3500 },
+  { "districtId": "kl-alappuzha", "annualRainfallMm": 2900 },
+
+  { "districtId": "tn-coimbatore", "annualRainfallMm": 680 },
+  { "districtId": "tn-thanjavur", "annualRainfallMm": 950 },
+  { "districtId": "tn-madurai", "annualRainfallMm": 850 }
+]

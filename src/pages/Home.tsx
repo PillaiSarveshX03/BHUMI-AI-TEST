@@ -1,9 +1,125 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
-import { IndiaMap, State } from '../components/IndiaMap';
-import { StateMap, District } from '../components/StateMap';
-import { SoilLegend } from '../components/SoilLegend';
-import { ToggleSwitch } from '../components/ToggleSwitch';
-import { FarmerDecisionCard } from '../components/FarmerDecisionCard';
+import { AnimatePresence, motion } from "framer-motion";
+import { IndiaMap } from "@/components/IndiaMap";
+import { StateMap } from "@/components/StateMap";
+import { ToggleSwitch } from "@/components/ToggleSwitch";
+import { SoilLegend } from "@/components/SoilLegend";
+import { InfoPanel } from "@/components/InfoPanel";
+import { useMapContext } from "@/context/MapContext";
+import { getSoilColor } from "@/utils/soilColors";
 
-export function Home(){const [soilView,setSoilView]=useState(false);const [hoverState,setHoverState]=useState<State|null>(null);const [selectedState,setSelectedState]=useState<State|null>(null);const [hoverDistrict,setHoverDistrict]=useState<District|null>(null);const [selectedDistrict,setSelectedDistrict]=useState<District|null>(null);const active=hoverDistrict||hoverState||selectedDistrict||selectedState;return <main className="bg-[#F5F9F4]"><section className="mx-auto max-w-7xl px-4 py-10"><motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} className="mb-8"><p className="font-semibold uppercase tracking-[.3em] text-[#388E3C]">AI-powered Farmer Assistant</p><h1 className="mt-3 max-w-4xl text-4xl font-black tracking-tight md:text-6xl">Interactive agricultural intelligence for India's soils, climate, and crop decisions.</h1><p className="mt-4 max-w-3xl text-lg text-zinc-600">Explore political and scientific soil layers, zoom from states into districts, and translate regional intelligence into practical crop recommendations.</p></motion.div><div className="grid gap-6 lg:grid-cols-[minmax(0,70%)_1fr]"><section className="rounded-3xl bg-white p-4 shadow-xl shadow-green-900/10 ring-1 ring-green-100"><div className="mb-4 flex flex-wrap items-center justify-between gap-3"><h2 className="text-2xl font-bold">India GIS Explorer</h2><ToggleSwitch soilView={soilView} setSoilView={setSoilView}/></div>{selectedState?<><button className="mb-3 text-sm font-semibold text-[#2E7D32]" onClick={()=>{setSelectedState(null);setSelectedDistrict(null)}}>← Back to India map</button><StateMap stateId={selectedState.id} onHover={setHoverDistrict} onSelect={setSelectedDistrict}/></>:<IndiaMap soilView={soilView} onHover={setHoverState} onSelect={(s)=>{setSelectedState(s);setSelectedDistrict(null)}} selected={selectedState?.id}/>}</section><aside className="space-y-4"><AnimatePresence mode="wait"><motion.div key={(active as any)?.name||'empty'} initial={{opacity:0,x:24}} animate={{opacity:1,x:0}} exit={{opacity:0,x:-24}} className="rounded-3xl bg-white p-6 shadow-xl shadow-green-900/10 ring-1 ring-green-100" role="status" aria-live="polite"><h2 className="text-xl font-bold">Regional intelligence</h2>{active?<div className="mt-4 space-y-2"><p className="text-3xl font-black text-[#2E7D32]">{(active as any).name}</p><p><b>Dominant soil:</b> {(active as any).soil}</p>{'rainfall' in active&&<p><b>Annual rainfall:</b> {(active as District).rainfall}</p>}{'climate' in active&&<p><b>Climate zone:</b> {(active as District).climate}</p>}{'description' in active&&<p className="text-zinc-600">{(active as State).description}</p>}</div>:<p className="mt-4 text-zinc-600">Hover or focus a state to see soil details. Click a state to open district-level political data.</p>}</motion.div></AnimatePresence><SoilLegend/></aside></div><div className="mt-6"><FarmerDecisionCard state={selectedState?.name} district={selectedDistrict?.name} soil={selectedDistrict?.soil||selectedState?.soil}/></div></section></main>}
+export default function Home() {
+  const {
+    viewMode,
+    setViewMode,
+    selectedState,
+    selectedDistrict,
+    selectState,
+    selectDistrict,
+    reset,
+  } = useMapContext();
+
+  const activeRecord = selectedDistrict ?? selectedState;
+
+  return (
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+      <motion.div
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35 }}
+        className="mb-8"
+      >
+        <p className="data-readout text-xs uppercase tracking-widest text-primary">
+          Agricultural intelligence · India
+        </p>
+        <h1 className="mt-2 font-display text-2xl font-semibold text-ink sm:text-3xl">
+          Explore soils across India, state by state
+        </h1>
+        <p className="mt-2 max-w-2xl text-sm text-ink/60">
+          Hover a state for its dominant soil, click to drill into districts,
+          then let the Farmer Decision Panel turn that soil profile into a
+          crop plan.
+        </p>
+      </motion.div>
+
+      <div className="flex flex-col gap-6 lg:flex-row">
+        <div className="lg:w-[70%]">
+          <AnimatePresence mode="wait" initial={false}>
+            {selectedState ? (
+              <motion.div
+                key="state-map"
+                initial={{ opacity: 0, scale: 0.94 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.04 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <StateMap
+                  state={selectedState}
+                  viewMode={viewMode}
+                  onBack={reset}
+                  onSelectDistrict={selectDistrict}
+                />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="india-map"
+                initial={{ opacity: 0, scale: 0.94 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.04 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <IndiaMap viewMode={viewMode} onSelectState={selectState} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        <aside className="flex flex-col gap-4 lg:w-[30%]" aria-label="Map information panel">
+          <div className="rounded-2xl border border-accent/30 bg-surface-alt p-4">
+            <p className="data-readout mb-3 text-[11px] uppercase tracking-wide text-primary">
+              Layer control
+            </p>
+            <ToggleSwitch viewMode={viewMode} onChange={setViewMode} />
+          </div>
+
+          <div className="rounded-2xl border border-accent/30 bg-surface p-4">
+            <p className="data-readout mb-2 text-[11px] uppercase tracking-wide text-primary">
+              Selection readout
+            </p>
+            {activeRecord ? (
+              <div>
+                <div className="flex items-center gap-2">
+                  <span
+                    aria-hidden="true"
+                    className="h-3 w-3 rounded-full"
+                    style={{ background: getSoilColor(activeRecord.dominantSoil) }}
+                  />
+                  <p className="font-display text-sm font-semibold text-ink">
+                    {activeRecord.name}
+                  </p>
+                </div>
+                <p className="mt-1 text-xs text-ink/60">
+                  Dominant soil: {activeRecord.dominantSoil}
+                </p>
+                {selectedState && (
+                  <p className="mt-2 text-[11px] leading-snug text-ink/50">
+                    {selectedState.soilDescription}
+                  </p>
+                )}
+              </div>
+            ) : (
+              <p className="text-xs text-ink/50">
+                Nothing selected yet — hover or click a tile on the map.
+              </p>
+            )}
+          </div>
+
+          <SoilLegend />
+        </aside>
+      </div>
+
+      <div className="mt-8">
+        <InfoPanel />
+      </div>
+    </div>
+  );
+}
