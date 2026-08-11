@@ -16,4 +16,7 @@ export default defineConfig({
         port: 5173,
         open: true,
     },
+    preview: {
+        allowedHosts: ["bhumi-ayi9.onrender.com"],
+    },
 });
