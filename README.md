@@ -4,6 +4,10 @@ An AI-powered farmer assistant frontend: explore India's soils state by
 state, drill into districts, and turn a soil profile into a crop plan.
 Built with React, TypeScript, Tailwind CSS, Framer Motion, and React Router.
 
+```
+https://bhumi-ayi9.onrender.com/
+```
+
 ---
 
 ## 1. Before you start
